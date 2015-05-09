@@ -1,0 +1,24 @@
+{
+  "name": "braid-dashboard",
+  "version": "0.1.0",
+  "description": "The dashboard application allowing users to manage their data in braid",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Bird",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.2.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-sass": "^2.0.0",
+    "reactify": "^1.1.0"
+  },
+  "dependencies": {
+    "gravatar": "^1.1.1",
+    "react": "^0.13.2",
+    "reflux": "^0.2.7"
+  }
+}
