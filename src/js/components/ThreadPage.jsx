@@ -34,6 +34,9 @@ var threadPage = React.createClass({
 	mixins:[Reflux.ListenerMixin],
 	componentDidMount: function() {
 		this.listenTo(threadStore,'_handleOnThreadUpdate');
+		this.setState({
+			threads: threadStore._getThreads()
+		})
 	},
 	getInitialState: function() {
 		return {
@@ -52,7 +55,9 @@ var threadPage = React.createClass({
 				When ever one of these threads are updated the content in this braid will be automatically updated too.
 				</MessageArea>
 				<div className="main container">
+					<div className="sidebar left quarter">
 					<ServiceFilter services={services}/>
+					</div>
 					<CurrentThreadsList threads={this.state.threads}/>
 					<AvailableThreadsList threads={this.state.availableThreads}/>
 				</div>

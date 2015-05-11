@@ -3,7 +3,7 @@ var React = require('react');
 var serviceFilter = React.createClass({
 	render: function() {
 		return (
-			<div className="service-filter quarter left">
+			<div className="service-filter">
 				<h3 className="filter__title">Filter By</h3>
 				<ul>
 					{this.props.services.map(function(service){

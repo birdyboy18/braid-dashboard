@@ -27,18 +27,7 @@ var threadStore = Reflux.createStore({
 
 	_getThreads: function() {
 		var self = this;
-		request
-		.get('/thread?braidId=554f9ac0efa011ddb52c5d99')
-		.use(prefix)
-		.set('Accept','application/json')
-		.end(function(err, res){
-			if (res.ok) {
-				self._threads = res.body;
-				return self._threads;
-			} else {
-
-			}
-		});
+		return this._threads;
 	},
 
 	_handleFindThreadById: function(threadId) {
