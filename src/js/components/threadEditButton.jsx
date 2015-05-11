@@ -11,7 +11,7 @@ var threadEditButton = React.createClass({
 		var data = {
 			visible: true,
 			modalType: 'editModal',
-			threadId: this.props.id
+			thread: this.props.thread
 		};
 		Actions.toggleModal(data);
 	}

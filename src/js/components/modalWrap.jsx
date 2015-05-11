@@ -4,6 +4,7 @@ var modalStore = require('../stores/modalStore.js');
 
 //components
 var EditThreadModal = require('./editThreadModal.jsx');
+var NewThreadModal = require('./newThreadModal.jsx');
 
 var modalWrap = React.createClass({
 	mixins:[Reflux.ListenerMixin],
@@ -12,20 +13,20 @@ var modalWrap = React.createClass({
 	},
 	getInitialState: function() {
 		return {
-			visibile: false
+			visible: false
 		}
 	},
 	render: function() {
 		if (this.state.modalType == 'editModal') {
 			return (
 				<div className={'modal ' + (this.state.visible ? 'visible': 'hidden' )} >
-					<EditThreadModal/>
+					<EditThreadModal thread={this.state.thread}/>
 				</div>
 			)
 		} else if (this.state.modalType == 'newThreadModal') {
 			return (
 				<div className={'modal ' + (this.state.visible ? 'visible': 'hidden' )} >
-					<NewThreadModal/>
+					<NewThreadModal service={this.state.service}/>
 				</div>
 			)
 		} else {
@@ -40,7 +41,8 @@ var modalWrap = React.createClass({
 		this.setState({
 			visible: data.visible,
 			modalType: data.modalType,
-			thread: data.thread
+			thread: data.thread,
+			service: data.service
 		});
 	},
 });

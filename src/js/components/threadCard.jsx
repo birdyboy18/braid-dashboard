@@ -24,7 +24,7 @@ var threadCard = React.createClass({
 						<p><span className="strong">Last Checked:</span> {lastChecked} mins ago</p>
 						<p><span className="strong">Affects: </span>{this.props.thread.entries.length} Entries</p>
 					</ThreadCardContent>
-					<ThreadEditButton id={this.props.id}/>
+					<ThreadEditButton thread={this.props.thread}/>
 				</div>
 			</div>
 		)

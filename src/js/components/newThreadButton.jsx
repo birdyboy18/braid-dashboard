@@ -1,4 +1,5 @@
 var React = require('react');
+var Actions = require('../actions/actions.js');
 
 var newThreadButton = React.createClass({
 	render: function() {
@@ -7,7 +8,12 @@ var newThreadButton = React.createClass({
 		)
 	},
 	_handleClick: function() {
-		console.log('add a new thread, fire the modal');
+		var data = {
+			visible: true,
+			service: 'YouTube',
+			modalType: 'newThreadModal'
+		}
+		Actions.toggleModal(data);
 	}
 });
 

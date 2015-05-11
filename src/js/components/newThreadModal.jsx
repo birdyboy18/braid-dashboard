@@ -1,9 +1,9 @@
 var React = require('react');
 var Actions = require('../actions/actions.js');
 
-var editThreadModal = React.createClass({
+var newThreadModal = React.createClass({
 	render: function() {
-		if (this.props.thread.service === 'youtube') {
+		if (this.props.service === 'YouTube') {
 			var iconUrl = '/assets/images/youtube.svg';
 		}
 		return (
@@ -13,23 +13,29 @@ var editThreadModal = React.createClass({
 					<img src={iconUrl} />
 				</div>
 				<div className="modal-title">
-					{this.props.thread.name}
+					Create a New Thread
 				</div>
 				<div className="modal-cross" onClick={this._handleCloseModal}>X</div>
 			</div>
 			<div className="modal-content">
-				<h3 className="modal-heading">Actions</h3>
-				<a className="btn--deactivate">De-activate</a>
-				<h3 className="modal-heading">Properties</h3>
+				<h3 className="modal-heading">Details</h3>
 				<div className="input-group">
-					<label>Thread Name:</label>
-					<input type="text" placeholder={this.props.thread.name}/>
+					<label>Name:</label>
+					<input type="text"/>
 				</div>
 				<div className="input-group">
-					<label>Description</label>
-					<textarea defaultValue={this.props.thread.description}></textarea>
+					<label>Description:</label>
+					<textarea ></textarea>
 				</div>
-				<input type="submit" className="btn--submit" value='save'/>
+				<div className="input-group">
+					<label>Service:</label>
+					<span>{this.props.service}</span>
+				</div>
+				<div className="input-group">
+					<label>Channel Username:</label>
+					<input type="text"/>
+				</div>
+				<input type="submit" className="btn--submit"/>
 			</div>
 		</div>
 		)
@@ -39,4 +45,4 @@ var editThreadModal = React.createClass({
 	}
 });
 
-module.exports = editThreadModal;
+module.exports = newThreadModal;
