@@ -1,4 +1,5 @@
 var React = require('react');
+var Link = require('react-router-component').Link;
 
 var Braidselect = require('./braid-select.jsx');
 var UserSettings = require('./user-settings.jsx');
@@ -14,7 +15,7 @@ var header = React.createClass({
 					<nav>
 						<ul>
 							{this.props.links.map(function(item){
-								return <li><a href={item.url}>{item.text}</a></li> 
+								return <li><Link href={item.url}>{item.text}</Link></li> 
 							})}
 						</ul>
 					</nav>
