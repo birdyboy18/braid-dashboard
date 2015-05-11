@@ -4,7 +4,7 @@ var ThreadCard = require('./threadCard.jsx');
 var currentThreadsList = React.createClass({
 	render: function() {
 		var threadCards = this.props.threads.map(function(thread){
-			return <ThreadCard thread={thread}/>
+			return <ThreadCard id={thread._id} key={thread._id} thread={thread}/>
 		});
 		return (
 			<div className="currentThreadsList left three-quarters">

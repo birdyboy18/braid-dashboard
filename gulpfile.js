@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
     concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
     prefix = require('gulp-autoprefixer');
 
@@ -8,6 +9,7 @@ gulp.task('js', function(){
   gulp.src('src/js/app.js')
   .pipe(browserify({transform: 'reactify'}))
   .pipe(concat('app.js'))
+  .pipe(uglify())
   .pipe(gulp.dest('./dist/js/'));
 });
 
@@ -32,6 +34,6 @@ gulp.task('copy', function(){
 gulp.task('default', ['js','copy']);
 
 gulp.task('watch', function(){
-  gulp.watch('./src/js/**/*.jsx', ['default']);
+  gulp.watch('./src/js/**/*.*', ['default']);
   gulp.watch('./src/sass/**/*.scss', ['sass']);
 });

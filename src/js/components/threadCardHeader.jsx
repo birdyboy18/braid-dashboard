@@ -11,8 +11,8 @@ var threadCardHeader = React.createClass({
 					<img src={iconUrl} />
 				</div>
 				<div className="thread-status right">
-					<span className={ 'status-icon ' + this.props.thread.active ? 'status-active' : 'status-unactive' }></span>
-					<span>Status: { this.props.thread.active ? 'Active' : 'Unactive'} </span>
+					<span className={ 'status-icon ' + (this.props.thread.active ? 'status-active' : 'status-unactive') }></span>
+					<span className="active-text" ><strong>Status:</strong> { this.props.thread.active ? ' Active' : ' Unactive'} </span>
 				</div>
 			</div>
 		)
