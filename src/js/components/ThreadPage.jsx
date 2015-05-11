@@ -17,9 +17,7 @@ var Actions = require('../actions/actions.js');
 
 var links = [
 	{ url:'/', text:'Threads'},
-	{ url:'/modifiers', text:'Modifiers'},
 	{ url:'/entries', text:'Entries'},
-	{ url:'/braid-settings', text:'Braid Settings'}
 ];
 
 var services = [

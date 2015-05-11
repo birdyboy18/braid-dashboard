@@ -9,7 +9,8 @@ var header = React.createClass({
 		return (
 			<header className='header'>
 				<div className='container'>
-					<a href="/" className='logo'>
+					<div className="navigation">
+						<a href="/" className='logo'>
 						<img src='/assets/images/logo@2x.png' />
 					</a>
 					<nav>
@@ -19,10 +20,11 @@ var header = React.createClass({
 							})}
 						</ul>
 					</nav>
-					<div className="settings-area">
-					<Braidselect current='Testing-Braid' />
-					<UserSettings email='paulbird1993@gmail.com' />
-					</div>
+				</div>
+				<div className="settings-area">
+				<Braidselect current='Testing-Braid' />
+				<UserSettings email='paulbird1993@gmail.com' />
+				</div>
 				</div>
 			</header>
 		)
